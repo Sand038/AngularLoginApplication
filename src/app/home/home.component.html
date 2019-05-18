@@ -7,16 +7,16 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-end">
-      <a class="navbar-item">
+      <a class="navbar-item" routerLink="/">
         Dashboard
       </a>
-      <a class="navbar-item">
+      <a class="navbar-item" routerLink="/products">
         Products
       </a>
-      <a class="navbar-item">
+      <a class="navbar-item" routerLink="/settings">
         Settings
       </a>
-      <a class="navbar-item">
+      <a class="navbar-item" (click)="logoutAction()">
         Logout
       </a>
     </div>
@@ -26,7 +26,7 @@
 <div class="content">
   <section class="section">
     <div class="container mainBlock">
-      home works!
+      <router-outlet></router-outlet>
     </div>
   </section>
 </div>

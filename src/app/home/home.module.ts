@@ -1,10 +1,18 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {SettingsComponent} from './settings/settings.component';
+import {ProductsComponent} from './products/products.component';
+import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [],
+  declarations: [DashboardComponent, SettingsComponent, ProductsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}
