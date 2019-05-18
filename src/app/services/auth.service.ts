@@ -19,12 +19,12 @@ export class AuthService {
 
   public async getUserData() {
     const userData = await sessionStorage.getItem('userData');
-    return JSON.stringify(userData);
+    return JSON.parse(userData);
   }
 
   public async login(postData) {
     const responseData = {
-      name: postData.name,
+      name: postData.email,
       id: '1234',
       token: '2324234XSDWESHT'
     };
