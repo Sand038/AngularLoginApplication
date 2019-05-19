@@ -3,28 +3,22 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {IndexComponent} from './index/index.component';
-import {HomeComponent} from './home/home.component';
-import {ErrorPageComponent} from './error-page/error-page.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './app.router';
 import {IndexModule} from './index/index.module';
 import {HomeModule} from './home/home.module';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import {ErrorPageModule} from './error-page/error-page.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    IndexComponent,
-    HomeComponent,
-    ErrorPageComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     IndexModule,
+    ErrorPageModule,
     RouterModule.forRoot(routes)
   ],
   providers: [AuthService, AuthGuard],

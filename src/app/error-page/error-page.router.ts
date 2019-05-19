@@ -1,6 +1,6 @@
-import {Route} from '@angular/router';
+import {Routes} from '@angular/router';
 import {ErrorPageComponent} from './error-page.component';
 
-export const ErrorPageRoutes: Route[] = [
+export const ErrorPageRoutes: Routes = [
   {path: '**', component: ErrorPageComponent},
 ];

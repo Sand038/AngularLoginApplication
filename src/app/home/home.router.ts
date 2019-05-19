@@ -1,19 +1,25 @@
-import {Route} from '@angular/router';
+import {Routes} from '@angular/router';
 import {HomeComponent} from './home.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {SettingsComponent} from './settings/settings.component';
-import {ProductsComponent} from './products/products.component';
 import {AuthGuard} from '../guards/auth.guard';
 
-export const HomeRoutes: Route[] = [
+export const HomeRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: '', component: DashboardComponent},
-      {path: 'settings', component: SettingsComponent},
-      {path: 'products', component: ProductsComponent}
+      {
+        path: '',
+        loadChildren: 'app/home/dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path: 'settings',
+        loadChildren: 'app/home/settings/settings.module#SettingsModule'
+      },
+      {
+        path: 'products',
+        loadChildren: 'app/home/products/products.module#ProductsModule'
+      }
     ]
   }
 ];
